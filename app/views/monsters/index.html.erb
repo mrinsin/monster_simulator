@@ -1,0 +1,23 @@
+<h1>Welcome to the Monster Buddy Simulator!</h1>
+
+<hr>
+
+<h2>Fill in the following fields to begin building your virtual monster buddy!</h2>
+
+<br>
+<form action="/monsters/create" method="post">
+  Color?<br>
+  <input type="text" name='color' /><br>
+  How many eyes?<br>
+  <input type="number" name='num_eyes' /><br>
+  <br>
+  Wings? <br>
+  <select name='wings'>
+    <option value='yes_wings'>Wings</option>
+    <option value='no_wings'>No Wings</option>
+  </select>
+  <br>
+  Name? <br>
+  <input type="text" name='name' /><br>
+  <input type="submit" value="Prepare machine for simulation...">
+</form>

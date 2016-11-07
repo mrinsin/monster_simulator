@@ -1,0 +1,51 @@
+<h1>Welcome to the Monster Buddy Simulator!</h1>
+
+<hr>
+
+<h2>Fill in the following fields to begin building your virtual monster buddy!</h2>
+
+<br>
+<!-- clicking on the submit button will not redirect you to any page here -->
+<form action=''/monsters/create' method="get">
+
+  Color?<br>
+  <input type="text" name='color' /><br>
+
+  <br>
+
+  How many eyes?<br>
+  <input type="number" name='num_eyes' /><br>
+
+  <br>
+
+  Wings? <br>
+  <select name='wings'>
+    <option value='yes_wings'>Wings</option>
+    <option value='no_wings'>No Wings</option>
+  </select>
+  <br>
+
+  Name? <br>
+  <input type="text" name='name' /><br>
+
+  <input type="submit" value="Prepare machine for simulation...">
+
+</form>
+
+<br>
+<hr>
+<hr>
+
+<h3>
+  <!-- only display this text if the monster has a name and a color -->
+  <% if !params[:name].empty? && !params[:color].empty? %>
+
+Hello! My name is <%= @monster.name %>. I am a <%= @monster.num_eyes %> eyed, <%= @monster.color %> colored monster with <%= @monster.has_wings %>. You can feed me, tickle me or even tell me a joke!
+
+<%= else @incase %>
+
+<% end %>
+
+</h3>
+
+<br>
